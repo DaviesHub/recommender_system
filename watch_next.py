@@ -46,8 +46,6 @@ for line in fhand:
     line = line.split(":") # Splits each movie name and description
     movie_dict[line[0].casefold()] = line[1] # Stores movie name and description in dictionary
 
-print(movie_dict)
-
 # Request previously watched movie (pwm) and get the previously watched movie description (pwmd) from the dictionary
 while True:
     pwm = input('''Enter the title of a previously watched movie below. Enter e to exit:
