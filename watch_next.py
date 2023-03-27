@@ -44,7 +44,9 @@ movie_dict = {} # Empty list to store movies
 fhand = open("movies.txt", "r")
 for line in fhand:
     line = line.split(":") # Splits each movie name and description
+    line[0] = line[0].rstrip()
     movie_dict[line[0].casefold()] = line[1] # Stores movie name and description in dictionary
+    print(movie_dict)
 
 # Request previously watched movie (pwm) and get the previously watched movie description (pwmd) from the dictionary
 while True:
