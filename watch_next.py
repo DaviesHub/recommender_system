@@ -52,7 +52,7 @@ for line in fhand:
 
 # Request previously watched movie (pwm) and get the previously watched movie description (pwmd) from the dictionary
 while True:
-    pwm = input('''Enter the title of a previously watched movie below. Enter e to exit:
+    pwm = input('''Enter the title of a previously watched movie below (Movie A - J). Enter e to exit:
     # enter title: ''').casefold()
 
     if pwm in movie_dict.keys():
