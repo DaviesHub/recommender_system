@@ -58,7 +58,7 @@ while True:
     if pwm in movie_dict.keys():
         pwmd = movie_dict[pwm]
         movie = movie_recommender(movie_dict, pwmd)
-        print("The most similar movie is:", movie)
+        print("The most similar movie is:", movie.title())
 
     elif pwm == "e":
         print('\nGoodbye!!!')
