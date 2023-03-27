@@ -14,11 +14,12 @@ def movie_recommender(movie_db, movie_descr):
     # Compare similarity of movie description entered and movie descriptions in the dictionary and select the movie
     # with the highest description.
     descr_list = [] # Initialize list to hold all movie descriptions
-    similarities = {} 
+    similarities = {} # Initiale dictionary to store movie description and similarities
 
     for movie in movie_db.values():
         descr_list.append(movie)
 
+    # Comaare each movie description in descr_list to the movie descr
     target_token = nlp(movie_descr)
     for descr in descr_list:
         descr_token = nlp(descr)
@@ -26,12 +27,13 @@ def movie_recommender(movie_db, movie_descr):
         similarities[descr] = sim
 
     # Check what movie has the highest sim
-    del similarities[movie_descr]
+    del similarities[movie_descr] # Delete the comparison of a movie with itself as this produces the highest similarity of 1.
     max_sim = max(similarities.values())
     for descr, sim in similarities.items():
         if sim == max_sim:
             recommended_movie_descr = descr
 
+    # Loop through movie dictionary to find what movie has the description with the highest similarity
     for movie, descr in movie_db.items():
         if descr == recommended_movie_descr:
             recommended_movie = movie
